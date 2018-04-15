@@ -364,6 +364,7 @@ public class ClientGame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
     public class ServerListenThread extends Thread {
 
+        //youtube
         public void run() {
             while (true) {
                 try {
