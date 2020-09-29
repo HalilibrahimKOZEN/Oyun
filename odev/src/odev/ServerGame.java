@@ -1,5 +1,7 @@
 package odev;
 
+import java.awt.Color;
+import java.awt.Dimension;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -16,6 +18,7 @@ import javax.swing.JOptionPane;
 
 public class ServerGame extends javax.swing.JFrame {
 
+    int i;
     public static ServerGame sGame;
     Server server;
     public Socket socket;
@@ -33,7 +36,13 @@ public class ServerGame extends javax.swing.JFrame {
 
     public ServerGame() {
         initComponents();
+
         sGame = this;
+        this.jButton2.setBackground(Color.darkGray.brighter());
+        this.getContentPane().setBackground(Color.CYAN.darker());
+//        this.getContentPane().setSize(1000, 650);
+        this.setPreferredSize(new Dimension(1000, 650));
+        this.pack();
         //jButton2.setVisible(false);
 
         sayilar1 = new ArrayList();
@@ -45,10 +54,10 @@ public class ServerGame extends javax.swing.JFrame {
             }
 
         }
-        for (int i = 0; i < sayilar1.size(); i++) {
-            System.out.println(sayilar1.get(i));
-        }
-        System.out.println("size = " + sayilar1.size());
+//        for (int i = 0; i < sayilar1.size(); i++) {
+//            System.out.println(sayilar1.get(i));
+//        }
+//        System.out.println("size = " + sayilar1.size());
 
         Set<Integer> numbers = new HashSet<>();
 
@@ -122,6 +131,7 @@ public class ServerGame extends javax.swing.JFrame {
         jButton27 = new javax.swing.JButton();
         jButton31 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -284,7 +294,7 @@ public class ServerGame extends javax.swing.JFrame {
                         .addComponent(jButton21)
                         .addGap(96, 96, 96)
                         .addComponent(jButton27)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -332,40 +342,55 @@ public class ServerGame extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setText("Tombala");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(gelenSayi, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(612, 612, 612)
-                        .addComponent(jLabel58))
-                    .addComponent(jButton2))
-                .addContainerGap(32, Short.MAX_VALUE))
+                        .addComponent(gelenSayi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(137, 137, 137)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 398, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel58)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2)
-                .addGap(24, 24, 24)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(18, 18, 18)
-                .addComponent(gelenSayi, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(451, 451, 451)
+                        .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(jButton2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1)
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(gelenSayi, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -373,13 +398,13 @@ public class ServerGame extends javax.swing.JFrame {
         Server.broadcast(sayilar1.get(count).toString());
         gelenSayi.setText(sayilar1.get(count).toString());
         count++;
-        if (jButton3.getText().equals(gelenSayi.getText()) || jButton5.getText().equals(gelenSayi.getText()) || jButton7.getText().equals(gelenSayi.getText())
-                || jButton9.getText().equals(gelenSayi.getText()) || jButton11.getText().equals(gelenSayi.getText()) || jButton13.getText().equals(gelenSayi.getText())
-                || jButton15.getText().equals(gelenSayi.getText()) || jButton17.getText().equals(gelenSayi.getText()) || jButton19.getText().equals(gelenSayi.getText())
-                || jButton21.getText().equals(gelenSayi.getText()) || jButton23.getText().equals(gelenSayi.getText()) || jButton25.getText().equals(gelenSayi.getText())
-                || jButton27.getText().equals(gelenSayi.getText()) || jButton29.getText().equals(gelenSayi.getText()) || jButton31.getText().equals(gelenSayi.getText())) {
-            jButton1.setEnabled(false);
-        }
+//        if (jButton3.getText().equals(gelenSayi.getText()) || jButton5.getText().equals(gelenSayi.getText()) || jButton7.getText().equals(gelenSayi.getText())
+//                || jButton9.getText().equals(gelenSayi.getText()) || jButton11.getText().equals(gelenSayi.getText()) || jButton13.getText().equals(gelenSayi.getText())
+//                || jButton15.getText().equals(gelenSayi.getText()) || jButton17.getText().equals(gelenSayi.getText()) || jButton19.getText().equals(gelenSayi.getText())
+//                || jButton21.getText().equals(gelenSayi.getText()) || jButton23.getText().equals(gelenSayi.getText()) || jButton25.getText().equals(gelenSayi.getText())
+//                || jButton27.getText().equals(gelenSayi.getText()) || jButton29.getText().equals(gelenSayi.getText()) || jButton31.getText().equals(gelenSayi.getText())) {
+//            jButton1.setEnabled(false);
+//        }
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -390,13 +415,15 @@ public class ServerGame extends javax.swing.JFrame {
         for (int i = 0; i < butonlar.length; i++) {
             if (butonlar[i] == bt) {
                 if (butonlar[i].getText().equals(gelenSayi.getText())) {
+                    butonlar[i].setBackground(Color.BLACK);
                     butonlar[i].setEnabled(false);
-                    jButton1.setEnabled(true);
+//                    jButton1.setEnabled(true);
                     if (!jButton3.isEnabled() && !jButton5.isEnabled() && !jButton7.isEnabled() && !jButton9.isEnabled() && !jButton11.isEnabled() && !jButton13.isEnabled() && !jButton15.isEnabled()
                             && !jButton17.isEnabled() && !jButton19.isEnabled() && !jButton21.isEnabled() && !jButton23.isEnabled() && !jButton25.isEnabled() && !jButton27.isEnabled() && !jButton29.isEnabled()
                             && !jButton31.isEnabled()) {
-                        jButton1.setEnabled(false);
-                        JOptionPane.showMessageDialog(this, "Tebrikler kazandınız...!");
+//                        jButton1.setEnabled(false);
+//                        JOptionPane.showMessageDialog(this, "Tebrikler kazandınız...!");
+                        jButton4.setBackground(Color.pink.darker());
                     }
                 }
             }
@@ -408,6 +435,15 @@ public class ServerGame extends javax.swing.JFrame {
         this.server = new Server(1500);
         server.start();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        if (!jButton3.isEnabled() && !jButton5.isEnabled() && !jButton7.isEnabled() && !jButton9.isEnabled() && !jButton11.isEnabled() && !jButton13.isEnabled() && !jButton15.isEnabled()
+                && !jButton17.isEnabled() && !jButton19.isEnabled() && !jButton21.isEnabled() && !jButton23.isEnabled() && !jButton25.isEnabled() && !jButton27.isEnabled() && !jButton29.isEnabled()
+                && !jButton31.isEnabled()) {
+            JOptionPane.showMessageDialog(this, "Tebrikler Oyunu Kazandınız...!!");
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     public void start() {
 
@@ -557,6 +593,7 @@ public class ServerGame extends javax.swing.JFrame {
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton31;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton9;

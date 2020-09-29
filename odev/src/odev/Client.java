@@ -1,11 +1,8 @@
 package odev;
 
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 
 class Listen extends Thread {
@@ -100,7 +97,7 @@ public class Client {
                     if (msg instanceof String) {
                         String message = msg.toString();
                         ClientGame.ThisGame.doOperations(message);
-                        String[] dizi = message.split(" ");
+//                        String[] dizi = message.split(" ");
                         
                         
 
@@ -117,7 +114,7 @@ public class Client {
     }
 
     public static void main(String[] args) {
-        Client client = new Client("127.0.0.1", 1500, "halilibrahim", null);
+        Client client = new Client("127.0.0.1", 1500, "halilibrahim ", null);
         client.start();
         client.sendMessage("Halil Ibrahim");
     }
