@@ -1,3 +1,2 @@
 # Tombala
-Çdmmss
 
