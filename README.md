@@ -1,1 +1,1 @@
-Bingo game developed using java
+Bingo game developed with java
